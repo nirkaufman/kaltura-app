@@ -19,6 +19,7 @@ export class TodolistComponent  {
 
   addItem(title) {
     this.items.push({ id: this.items.length + 1, title })
+    // this.items = [...this.items, { id: this.items.length + 1, title }]
   }
 
 }

@@ -9,6 +9,7 @@ import {Component, OnInit, Input} from '@angular/core';
   `
 })
 export class FooterComponent  {
+
   @Input() counter: number;
 
 }
