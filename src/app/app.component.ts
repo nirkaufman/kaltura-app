@@ -4,8 +4,17 @@ import {Component} from '@angular/core';
   selector: 'app-root',
   template: `
     <h1>{{ title }}</h1>
-    <input [type]="kind" #inputBox>
+    <input [type]="kind"
+           #inputBox>
     <button (click)="changeTitle(inputBox.value)">click me</button>
+
+    <input type="checkbox"
+           (change)="child.toggle()">
+
+    <app-child [content]="title"
+               (toggleMe)="log($event)"
+               #child></app-child>
+
   `,
 })
 export class AppComponent {
@@ -21,7 +30,9 @@ export class AppComponent {
     this.title = value;
   }
 
-  getFormattedTitle() {
-    return this.title.toUpperCase();
+  log(event) {
+    console.log(event);
+    // console.log("VVVVVV");
   }
+
 }
