@@ -3,8 +3,10 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>DIRECTIVE</h1>
-
+    <h1 highlight="red">DIRECTIVE</h1>
+    
+    <input type="text" (keydown.space)="test()">
+      
     <h2 *appKlIf="flag">I Am The Content</h2>
 
     <h2 *appKfor="let color of colors">{{color}}</h2>
@@ -20,5 +22,8 @@ export class AppComponent {
 
   colors = ['red', 'green', 'blue'];
 
+  test() {
+    console.log('test');
+  }
 
 }

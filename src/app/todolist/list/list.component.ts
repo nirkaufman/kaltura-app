@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, ViewContainerRef} from '@angular/core';
 import {Item} from '../../models/item';
 
 @Component({
@@ -7,7 +7,5 @@ import {Item} from '../../models/item';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent  {
-
   @Input() items: Item[];
-
 }
