@@ -1,8 +1,12 @@
 <li>
   <div class="view">
     <input class="toggle"
-           type="checkbox">
-    <label>Todo Title</label>
+           type="checkbox"
+           (change)="item.completed = $event.target.checked"
+           [checked]="item.completed">
+
+    <label>{{ item.title }}</label>
+
     <button class="destroy"></button>
   </div>
   <input class="edit">

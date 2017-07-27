@@ -1,10 +1,9 @@
-import {Item} from '../models/item';
 import {Injectable} from '@angular/core';
+import {Item} from '../models/item';
 
 @Injectable()
 export class TodolistService {
   private _items: Item[];
-
 
   constructor() {
     this._items = [];
@@ -18,11 +17,3 @@ export class TodolistService {
     this._items.push(new Item(title));
   }
 }
-
-
-
-
-
-
-
-

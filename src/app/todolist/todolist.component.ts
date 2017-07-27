@@ -8,12 +8,12 @@ import {TodolistService} from './todolist.service';
 
       <app-header>
         <app-title></app-title>
-        <app-input></app-input>
+        <app-input (valueEnter)="list.addItem($event)" ></app-input>
       </app-header>
 
       <app-main>
         <app-toggle></app-toggle>
-        <app-list></app-list>
+        <app-list [items]="list.items"></app-list>
       </app-main>
 
       <app-footer>

@@ -18,3 +18,17 @@
    
     `counter`
     `action-button`
+// Create a service
+
+// wire up
+1. the InputComponent should emit an `valueEnter` event
+2. The `ListComponent` should accept array as an attribute,
+   Loop over the items and create an `ItemComponent` 
+3. The `ItemComponent` should receive an `Item` as prop to display it
+
+
+
+
+
+
+ 
