@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {TodolistModule} from './todolist/todolist.module';
 
@@ -9,4 +9,5 @@ import {TodolistModule} from './todolist/todolist.module';
   bootstrap   : [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+}
