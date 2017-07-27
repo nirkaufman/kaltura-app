@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import { ChildComponent } from './child/child.component';
+import {TodolistModule} from './todolist/todolist.module';
 
 @NgModule({
-  imports     : [BrowserModule],
-  declarations: [AppComponent, ChildComponent],
+  imports     : [BrowserModule, TodolistModule],
+  declarations: [AppComponent],
   bootstrap   : [AppComponent]
 })
 
