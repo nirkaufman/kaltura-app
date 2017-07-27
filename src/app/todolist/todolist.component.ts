@@ -8,7 +8,7 @@ import {TodolistService} from './todolist.service';
 
       <app-header>
         <app-title></app-title>
-        <app-input (valueEnter)="list.addItem($event)" ></app-input>
+        <app-input (valueEnter)="list.addItem($event)"></app-input>
       </app-header>
 
       <app-main>
@@ -17,7 +17,7 @@ import {TodolistService} from './todolist.service';
       </app-main>
 
       <app-footer>
-        <app-counter></app-counter>
+        <app-counter [count]="list.items | count:'completed':true"></app-counter>
         <app-action-button></app-action-button>
       </app-footer>
 

@@ -8,4 +8,10 @@ import {Item} from '../../models/item';
 })
 export class ItemComponent  {
   @Input() item: Item;
+
+  getClass() {
+    return {
+      completed: this.item.completed
+    }
+  }
 }

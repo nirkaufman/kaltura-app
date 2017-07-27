@@ -1,11 +1,11 @@
-<li>
+<li [ngClass]="getClass()">
   <div class="view">
     <input class="toggle"
            type="checkbox"
            (change)="item.completed = $event.target.checked"
            [checked]="item.completed">
 
-    <label>{{ item.title }}</label>
+    <label>{{ item.title | up}} {{ item.created | date }} </label>
 
     <button class="destroy"></button>
   </div>

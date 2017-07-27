@@ -12,9 +12,10 @@ import {TitleComponent} from './title/title.component';
 import {TodolistComponent} from './todolist.component';
 import {TodolistService} from './todolist.service';
 import {ToggleComponent} from './toggle/toggle.component';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
-  imports     : [CommonModule],
+  imports     : [CommonModule, SharedModule],
   providers   : [TodolistService],
   declarations: [
     TodolistComponent,
