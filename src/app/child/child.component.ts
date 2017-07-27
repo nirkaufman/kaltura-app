@@ -10,7 +10,7 @@ import {Component, Input, EventEmitter, Output} from '@angular/core';
 })
 export class ChildComponent {
 
-  @Input() content: string;
+  @Input()  content: string;
   @Output() toggleMe = new EventEmitter<boolean>();
 
   public flag = false;
@@ -19,5 +19,4 @@ export class ChildComponent {
     this.flag = !this.flag;
     this.toggleMe.emit(this.flag);
   }
-
 }

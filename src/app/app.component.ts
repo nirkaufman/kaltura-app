@@ -14,7 +14,6 @@ import {Component} from '@angular/core';
     <app-child [content]="title"
                (toggleMe)="log($event)"
                #child></app-child>
-
   `,
 })
 export class AppComponent {
@@ -32,7 +31,6 @@ export class AppComponent {
 
   log(event) {
     console.log(event);
-    // console.log("VVVVVV");
   }
 
 }
