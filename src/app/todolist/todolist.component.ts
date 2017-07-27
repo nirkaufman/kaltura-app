@@ -1,17 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-todolist',
   template: `
-    <p>
-      todolist Works!
-    </p>
-  `,
-  styles: []
+    <section class="todoapp">
+
+      <app-header>
+        <app-title></app-title>
+        <app-input></app-input>
+      </app-header>
+
+      <app-main>
+        <app-toggle></app-toggle>
+        <app-list></app-list>
+      </app-main>
+
+      <app-footer>
+        <app-counter></app-counter>
+        <app-action-button></app-action-button>
+      </app-footer>
+
+    </section>
+  `
 })
 export class TodolistComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
