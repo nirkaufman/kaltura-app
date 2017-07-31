@@ -18,7 +18,7 @@ import {TodolistService} from './todolist.service';
       </app-main>
 
       <app-footer>
-        <app-counter [count]="list.items | count:'completed':true"></app-counter>
+        <!--<app-counter [count]="list.items | count:'completed':true"></app-counter>-->
         <app-action-button></app-action-button>
       </app-footer>
 
@@ -28,17 +28,15 @@ import {TodolistService} from './todolist.service';
 export class TodolistComponent  {
 
   public list: TodolistService;
-  private master: TodolistService;
 
-  constructor(@Self() list: TodolistService,
-              @SkipSelf() master:TodolistService) {
+  constructor(@Self() list: TodolistService) {
     this.list = list;
-    this.master = master;
+
   }
 
   addItem(title){
     this.list.addItem(title);
-    this.master.addItem(title);
+
   }
 
 }

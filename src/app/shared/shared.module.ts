@@ -22,5 +22,4 @@ export class SharedModule {
   constructor(logger: LoggerService) {
       logger.log('SharedModule')
   }
-
 }

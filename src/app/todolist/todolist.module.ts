@@ -13,11 +13,15 @@ import {TitleComponent} from './title/title.component';
 import {TodolistComponent} from './todolist.component';
 import {TodolistService} from './todolist.service';
 import {ToggleComponent} from './toggle/toggle.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const URL = new InjectionToken('');
 
 @NgModule({
-  imports     : [CommonModule, SharedModule],
+  imports     : [
+      CommonModule,
+    SharedModule,
+    HttpClientModule],
   providers   : [
     { provide: TodolistService, useClass: TodolistService},
     { provide: URL, useValue: 'http://kaltura/api' },

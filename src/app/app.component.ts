@@ -4,10 +4,10 @@ import {TodolistService} from './todolist/todolist.service';
 @Component({
   selector: 'app-root',
   template: `
-    <pre>{{ list.items | json }}</pre>  
     <app-todolist></app-todolist>
-    <app-todolist></app-todolist>
-    <app-todolist></app-todolist>
+    <!--<pre>{{ list.items | json }}</pre>  -->
+    <!--<app-todolist></app-todolist>-->
+    <!--<app-todolist></app-todolist>-->
   `,
 })
 export class AppComponent {
