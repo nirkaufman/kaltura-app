@@ -11,4 +11,5 @@ import { UpPipe } from './shared/up.pipe';
 })
 
 export class AppModule {
+
 }

@@ -1,5 +1,6 @@
 import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
+import {NgModule, InjectionToken, Inject} from '@angular/core';
+import {SharedModule} from '../shared/shared.module';
 import {ActionButtonComponent} from './action-button/action-button.component';
 import {CounterComponent} from './counter/counter.component';
 import {FooterComponent} from './footer/footer.component';
@@ -12,11 +13,15 @@ import {TitleComponent} from './title/title.component';
 import {TodolistComponent} from './todolist.component';
 import {TodolistService} from './todolist.service';
 import {ToggleComponent} from './toggle/toggle.component';
-import {SharedModule} from '../shared/shared.module';
+
+const URL = new InjectionToken('');
 
 @NgModule({
   imports     : [CommonModule, SharedModule],
-  providers   : [TodolistService],
+  providers   : [
+    { provide: TodolistService, useClass: TodolistService},
+    { provide: URL, useValue: 'http://kaltura/api' },
+  ],
   declarations: [
     TodolistComponent,
     HeaderComponent,
@@ -32,4 +37,9 @@ import {SharedModule} from '../shared/shared.module';
   exports     : [TodolistComponent]
 })
 export class TodolistModule {
+
+  constructor(@Inject(URL) url) {
+    console.log(url);
+  }
+
 }

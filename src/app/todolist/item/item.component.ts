@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Item} from '../../models/item';
+import {TodolistService} from '../todolist.service';
 
 @Component({
   selector: 'app-item',
@@ -8,6 +9,12 @@ import {Item} from '../../models/item';
 })
 export class ItemComponent  {
   @Input() item: Item;
+
+  public list: TodolistService;
+
+  constructor(list: TodolistService) {
+    this.list = list;
+  }
 
   getClass() {
     return {

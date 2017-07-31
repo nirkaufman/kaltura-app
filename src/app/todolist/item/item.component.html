@@ -7,7 +7,7 @@
 
     <label>{{ item.title | up}} {{ item.created | date }} </label>
 
-    <button class="destroy"></button>
+    <button (click)="list.removeItem(item)" class="destroy"></button>
   </div>
   <input class="edit">
 </li>

@@ -1,14 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, SkipSelf, Self, Optional, Injector, ReflectiveInjector} from '@angular/core';
 import {TodolistService} from './todolist.service';
 
 @Component({
-  selector: 'app-todolist',
-  template: `
+  selector : 'app-todolist',
+  providers: [TodolistService],
+  template : `
     <section class="todoapp">
 
       <app-header>
         <app-title></app-title>
-        <app-input (valueEnter)="list.addItem($event)"></app-input>
+        <app-input (valueEnter)="addItem($event)"></app-input>
       </app-header>
 
       <app-main>
@@ -24,15 +25,20 @@ import {TodolistService} from './todolist.service';
     </section>
   `
 })
-export class TodolistComponent implements OnInit {
+export class TodolistComponent  {
 
   public list: TodolistService;
+  private master: TodolistService;
 
-  constructor(list: TodolistService) {
+  constructor(@Self() list: TodolistService,
+              @SkipSelf() master:TodolistService) {
     this.list = list;
+    this.master = master;
   }
 
-  ngOnInit() {
+  addItem(title){
+    this.list.addItem(title);
+    this.master.addItem(title);
   }
 
 }
