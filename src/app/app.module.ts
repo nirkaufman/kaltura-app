@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule, Title} from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {TodolistModule} from './todolist/todolist.module';
-import { UpPipe } from './shared/up.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  imports     : [BrowserModule, TodolistModule],
+  imports     : [
+    BrowserModule,
+    TodolistModule,
+    ReactiveFormsModule
+  ],
   declarations: [AppComponent],
   bootstrap   : [AppComponent]
 })
